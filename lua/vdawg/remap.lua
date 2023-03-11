@@ -32,8 +32,12 @@ map("n", "<leader>Y", [["+Y]])
 -- map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- Replace all instances of the selected text
-map('v', '<leader><leader>f', [["hy:%s#<C-r>h##g<left><left><left>]])
+-- map('v', '<leader><leader>f', [["hy:%s#<C-r>h##g<left><left><left>]])
 
+-- map('n', '<leader>i', function()
+--     print("xoxo")
+
+-- end)
 if vim.g.vscode then
 
     -- Toggle comments with the native VS Code API
@@ -43,6 +47,6 @@ if vim.g.vscode then
     map('n', 'gcc', '<Plug>VSCodeCommentaryLine')
 
     -- Toggle quick open with tab
-    -- map('n', '<tab>', '[[<Cmd>call VSCodeCall("workbench.action.quickOpen")<CR>]]')
+    map('n', '<tab>', '[[<Cmd>call VSCodeCall("workbench.action.quickOpen")<CR>]]')
 end
 

@@ -13,7 +13,5 @@ return require('packer').startup(function(use)
 
     use 'bkad/CamelCaseMotion'
 
-    use 'mg979/vim-visual-multi'
-
 end)
 
