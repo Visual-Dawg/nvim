@@ -1,9 +1,23 @@
 require('leap').add_default_mappings()
 
-vim.api.nvim_set_hl(0, 'LeapBackdrop', {
-    fg = 'red'
+vim.api.nvim_set_hl(0, 'LeapLabelPrimary', {
+    fg = '#101010',
+    bg = '#ea6962'
 })
 
+vim.api.nvim_set_hl(0, 'LeapLabelSecondary', {
+    bg = '#7daea3',
+    fg = 'black'
+})
+
+vim.api.nvim_set_hl(0, 'LeapMatch', {
+    bg = '#e78a4e',
+    fg = 'black'
+})
+
+vim.api.nvim_set_hl(0, 'LeapBackdrop', {
+    bg = '#1c1c1c'
+})
 -- *LeapMatch*
 --     Matches that can be reached directly, without having to use a label.
 --     (By default, this is only used for traversal mode, or when a match
