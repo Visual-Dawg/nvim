@@ -1,7 +1,3 @@
-if vim.o.termguicolors then
-    vim.o.termguicolors = true
-end
-
 vim.o.background = 'dark' -- or 'light'
 
 -- Set contrast.

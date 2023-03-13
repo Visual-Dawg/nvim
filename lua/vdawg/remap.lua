@@ -22,22 +22,19 @@ map("n", "N", "Nzzzv")
 
 -- Paste but keep pasted text in regiser
 map("x", "<leader>p", [["_dP]])
--- Delete but do not override regiser
+-- Delete operator but does not override regiser
 map({"n", "v"}, "<leader>d", [["_d]])
 
 --  Yank in the system clipboard
 map({"n", "v"}, "<leader>y", [["+y]])
 map("n", "<leader>Y", [["+Y]])
 
--- map("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- Go to the end of the line
+map("n", "<leader><tab>", '$')
 
 -- Replace all instances of the selected text
--- map('v', '<leader><leader>f', [["hy:%s#<C-r>h##g<left><left><left>]])
+map('v', '<leader><leader>f', [["hy:%s#<C-r>h##g<left><left><left>]])
 
--- map('n', '<leader>i', function()
---     print("xoxo")
-
--- end)
 if vim.g.vscode then
 
     -- Toggle comments with the native VS Code API
@@ -47,6 +44,14 @@ if vim.g.vscode then
     map('n', 'gcc', '<Plug>VSCodeCommentaryLine')
 
     -- Toggle quick open with tab
-    map('n', '<tab>', '[[<Cmd>call VSCodeCall("workbench.action.quickOpen")<CR>]]')
+    map('n', '<tab>', function()
+        vim.fn['VSCodeCall']("workbench.action.quickOpen")
+    end)
+
+    -- Close editor 
+    map('n', '<leader><C-w>', function()
+        vim.fn['VSCodeCall']("workbench.action.closeActiveEditor")
+    end)
+
 end
 
