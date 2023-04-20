@@ -1,4 +1,4 @@
--- Based on ThePrimeagen
+-- Based on ThePrimeagen config
 vim.g.mapleader = " "
 
 local map = vim.keymap.set
@@ -34,6 +34,8 @@ map("n", "<leader><tab>", '$')
 
 -- Replace all instances of the selected text
 map('v', '<leader><leader>f', [["hy:%s#<C-r>h##g<left><left><left>]])
+-- Replace all instances of the word under the cursor
+map('n', '<leader><leader>f', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>]])
 
 if vim.g.vscode then
 

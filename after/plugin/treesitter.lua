@@ -7,5 +7,44 @@ require'nvim-treesitter.configs'.setup {
 
     -- Automatically install missing parsers when entering buffer
     -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-    auto_install = true
+    auto_install = true,
+
+    -- highlight = {
+    --     enable = vs
+    -- },
+
+    textobjects = {
+        select = {
+            enable = true,
+            lookahead = true,
+            keymaps = {
+                ["ia"] = "@parameter.inner",
+                ["aa"] = "@parameter.outer"
+            },
+            include_surrounding_whitespace = true
+        },
+        move = {
+            enable = true,
+            goto_next_start = {
+                [']m'] = '@function.outer'
+            },
+            goto_previous_start = {
+                ['[m'] = '@function.outer'
+            }
+        }
+    },
+
+    endwise = {
+        enable = true
+    },
+
+    textsubjects = {
+        enable = true,
+        prev_selection = ',',
+        keymaps = {
+            ['<cr>'] = 'textsubjects-smart',
+            [';'] = 'textsubjects-container-outer',
+            ['i;'] = 'textsubjects-container-inner'
+        }
+    }
 }
