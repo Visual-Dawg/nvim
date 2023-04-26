@@ -10,7 +10,7 @@ map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
 --  Normal J, concat lines, but cursor stays in place
---  map("n", "J", "mzJ`z")
+map("n", "J", "mzJ`z")
 
 --  Half page jumping, but cursor stays in the middle
 map("n", "<C-d>", "<C-d>zz")
@@ -28,9 +28,6 @@ map({"n", "v"}, "<leader>d", [["_d]])
 --  Yank in the system clipboard
 map({"n", "v"}, "<leader>y", [["+y]])
 map("n", "<leader>Y", [["+Y]])
-
--- Go to the end of the line
-map("n", "<leader><tab>", '$')
 
 -- Replace all instances of the selected text
 map('v', '<leader><leader>f', [["hy:%s#<C-r>h##g<left><left><left>]])

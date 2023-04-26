@@ -6,16 +6,7 @@ return require('packer').startup(function(use)
     use {
         'ggandor/leap.nvim',
         disable = false,
-        requires = 'tpope/vim-repeat',
-        config = function()
-            local leap = require('leap')
-
-            leap.opts.equivalence_classes = {' \r\n\t', '([{<', {'"', "'", '`'}}
-            leap.add_default_mappings()
-            vim.api.nvim_set_hl(0, 'LeapBackdrop', {
-                bg = '#1c1c1c'
-            })
-        end
+        requires = 'tpope/vim-repeat'
     }
 
     use 'tpope/vim-repeat'
@@ -31,14 +22,14 @@ return require('packer').startup(function(use)
 
     use {
         "RRethy/nvim-treesitter-textsubjects",
-        after = "nvim-treesitter/nvim-treesitter",
-        requires = "nvim-treesitter/nvim-treesitter"
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter"
     }
 
     use {
         "nvim-treesitter/nvim-treesitter-textobjects",
-        after = "nvim-treesitter/nvim-treesitter",
-        requires = "nvim-treesitter/nvim-treesitter"
+        after = "nvim-treesitter",
+        requires = "nvim-treesitter"
     }
 
     use({

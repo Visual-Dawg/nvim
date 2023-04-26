@@ -10,7 +10,7 @@ require'nvim-treesitter.configs'.setup {
     auto_install = true,
 
     -- highlight = {
-    --     enable = vs
+    --     enable = true
     -- },
 
     textobjects = {
@@ -42,7 +42,7 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
         prev_selection = ',',
         keymaps = {
-            ['<cr>'] = 'textsubjects-smart',
+            ['.'] = 'textsubjects-smart',
             [';'] = 'textsubjects-container-outer',
             ['i;'] = 'textsubjects-container-inner'
         }
